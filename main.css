@@ -1,0 +1,200 @@
+/*========================================================================
+
+	CSS Reset
+
+========================================================================*/
+*{
+	box-sizing: border-box;
+	font: inherit;
+	margin: 0;
+	padding: 0;
+}
+/*========================================================================
+
+	Variables
+
+========================================================================*/
+:root{
+	--background-primary: #222;
+
+	--color-primary: rgb(255, 20, 147);
+
+	--color-secondary: rgb(255, 215, 0);
+
+	--text-color-primary: #fff;
+	--text-color-secondary: var(--color-primary);
+	--text-color-tertiary: var(--color-secondary);
+
+	--text-xxlarge: 2.2rem;
+	--text-xlarge: 1.8rem;
+	--text-large: 1.4rem;
+	--text-medium: 1rem;
+	--text-small: .8rem;
+	--text-xsmall: .6rem;
+
+
+	--font-primary: 'Lato', sans-serif;
+	--font-secondary: 'Quicksand', sans-serif;
+
+	--spacing-standard: 1rem;
+}
+/*========================================================================
+
+	Typography
+
+========================================================================*/
+html{
+  font-family: var(--font-primary);
+  line-height: 1.5;
+  color: var(--text-color-primary);
+}
+
+h1, h2, h3, h4, h5, h6{
+	font-family: var(--font-secondary);
+}
+
+h1{
+  color: var(--text-color);
+  font-size: var(--text-xxlarge);
+  font-weight: 700;
+  text-shadow: 0 .1rem 0 var(--text-color-secondary);
+}
+
+h2{
+	font-size: var(--text-xlarge);
+}
+
+h3{
+	font-size: var(--text-large);
+}
+
+h4{
+	font-size: var(--text-medium);
+	text-decoration: underline;
+}
+
+h5{
+	font-size: var(--text-small);
+}
+
+h6{
+	font-size: var(--text-xsmall);
+}
+
+p{
+	font-size: var(--text-medium);
+	margin-bottom: var(--spacing-standard);
+}
+
+strong{
+	font-size: var(--text-medium);
+	font-weight: 700;
+}
+
+em{
+	font-size: var(--text-medium);
+	font-weight: 400;
+	font-style: italic;
+}
+
+text{
+	font-size: .7rem;
+	fill: var(--text-color-primary);
+}
+/*========================================================================
+
+	Layout
+
+========================================================================*/
+body{
+	background-color: var(--background-primary);
+}
+header{
+  align-items: center;
+  background-image: linear-gradient(to bottom, rgba(255, 20, 147, 0.90), rgba(255, 215, 0, 0.60), rgba(34, 34, 34, 1)), url(hero-image.png);
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 7rem;
+}
+.my-name{
+  color: var(--background-primary);
+  display: block;
+  font-family: var(--font-secondary);
+  font-size: var(--text-xxlarge);
+  font-weight: 700;
+  margin: var(--spacing-standard) auto;
+  text-decoration: none;
+  text-shadow: 0 .1rem 0 var(--color-secondary);
+}
+
+header li{
+  display: inline-block;
+  list-style-type: none;
+}
+header nav a{
+  color: var(--text-color-tertiary);
+  font-family: var(--font-primary);
+  text-decoration: none;
+
+}
+/*========================================================================
+
+  Examples
+
+========================================================================*/
+
+.color-dot{
+  width: 15rem;
+  padding: var(--spacing-standard);
+}
+.color-dot:first-child circle{
+  fill: var(--background-primary);
+  stroke: white;
+}
+.color-dot circle{
+  fill: var(--color-primary);
+  stroke: white;
+}
+.color-dot:last-child circle{
+  fill: var(--color-secondary);
+  stroke: white;
+}
+.page-title-row td:first-child{
+	font-size: var(--text-xxlarge);
+	font-family: var(--font-secondary);
+}
+
+.section-title-row td:first-child{
+	font-size: var(--text-xlarge);
+	font-family: var(--font-secondary);
+}
+
+.subsection-title-row td:first-child{
+	font-size: var(--text-large);
+	font-family: var(--font-secondary);
+}
+
+.inner-subsection-row td:first-child{
+	font-size: var(--text-medium);
+	font-family: var(--font-secondary);
+}
+
+.featured-text-row td:first-child{
+	font-size: var(--text-large);
+	font-family: var(--font-secondary);
+	font-weight: 600;
+	font-style: italic;
+}
+
+.heavy-text-row td:first-child{
+	font-size: var(--text-medium);
+	font-weight: 700;
+}
+
+.emphasized-text-row td:first-child{
+	font-size: var(--text-medium);
+	font-weight: 400;
+	font-style: italic;
+}
