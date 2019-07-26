@@ -118,27 +118,47 @@ header{
   justify-content: center;
   height: 7rem;
 }
-.my-name{
-  color: var(--background-primary);
-  display: block;
-  font-family: var(--font-secondary);
-  font-size: var(--text-xxlarge);
-  font-weight: 700;
-  margin: var(--spacing-standard) auto;
-  text-decoration: none;
-  text-shadow: 0 .1rem 0 var(--color-secondary);
-}
-
 header li{
   display: inline-block;
   list-style-type: none;
 }
 header nav a{
-  color: var(--text-color-tertiary);
+  color: var(--text-color-primary);
   font-family: var(--font-primary);
+  font-weight: bold;
+  margin: var(--spacing-standard);
   text-decoration: none;
-
 }
+
+header nav a:hover::before{
+   content: '》';
+ }
+
+ .active::before{
+  content: '》';
+}
+
+.my-name{
+   color: var(--background-primary);
+   display: block;
+   font-family: var(--font-secondary);
+   font-size: var(--text-xxlarge);
+   font-weight: 700;
+   margin: var(--spacing-standard);
+   text-decoration: none;
+ }
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+   header{
+     flex-direction: row;
+     justify-content: space-around;
+   }
+
+   header nav a{
+     color: var(--background-primary);
+   }
+
+ }
 /*========================================================================
 
   Examples
