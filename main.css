@@ -15,13 +15,13 @@
 
 ========================================================================*/
 :root{
-	--background-primary: #222;
+	--background-primary: #fff;
 
 	--color-primary: rgb(255, 20, 147);
-
 	--color-secondary: rgb(255, 215, 0);
 
-	--text-color-primary: #fff;
+	--text-color-primary: #222;
+  --text-color-primary-light: #888;
 	--text-color-secondary: var(--color-primary);
 	--text-color-tertiary: var(--color-secondary);
 
@@ -57,7 +57,7 @@ h1{
   color: var(--text-color);
   font-size: var(--text-xxlarge);
   font-weight: 700;
-  text-shadow: 0 .1rem 0 var(--text-color-secondary);
+  text-align: center;
 }
 
 h2{
@@ -81,6 +81,21 @@ h6{
 	font-size: var(--text-xsmall);
 }
 
+.my-name{
+   color: var(--text-color-primary);
+   display: block;
+   font-family: var(--font-secondary);
+   font-size: 2.5rem;
+   font-weight: 700;
+   margin: var(--spacing-standard);
+   text-decoration: none;
+ }
+
+blockquote{
+  font-family: var(--font-secondary);
+  font-size: var(--text-xlarge);
+}
+
 p{
 	font-size: var(--text-medium);
 	margin-bottom: var(--spacing-standard);
@@ -101,64 +116,214 @@ text{
 	font-size: .7rem;
 	fill: var(--text-color-primary);
 }
+
+@media screen and (max-width: 1024px) and (min-width: 768px){
+  h1{
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1025px){
+  h1{
+  text-align: left;
+  }
+
+  .my-name{
+    background-color: white;
+    font-size: 3rem;
+    margin: 0 0 var(--spacing-standard) 0;
+    padding-left: var(--spacing-standard);
+  }
+}
+/*========================================================================
+
+ Cards
+
+========================================================================*/
+.card-work{
+  border: 3px solid deeppink;
+  min-width: 20rem;
+}
+/*========================================================================
+
+	Header
+
+========================================================================*/
 /*========================================================================
 
 	Layout
 
 ========================================================================*/
+
 body{
 	background-color: var(--background-primary);
+  min-width: 400px;
 }
+
 header{
   align-items: center;
-  background-image: linear-gradient(to bottom, rgba(255, 20, 147, 0.90), rgba(255, 215, 0, 0.60), rgba(34, 34, 34, 1)), url(hero-image.png);
-  background-size: cover;
+  background-color: #DFDBE5;
+  background-image: linear-gradient(to right, rgba(255, 20, 147, 0.80), rgba(255, 215, 0, 0.60)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23888888' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 7rem;
 }
-header li{
-  display: inline-block;
-  list-style-type: none;
+main{
+  padding: var(--spacing-standard);
 }
-header nav a{
-  color: var(--text-color-primary);
-  font-family: var(--font-primary);
-  font-weight: bold;
-  margin: var(--spacing-standard);
-  text-decoration: none;
-}
-
-header nav a:hover::before{
-   content: '》';
- }
-
- .active::before{
-  content: '》';
-}
-
-.my-name{
-   color: var(--background-primary);
-   display: block;
-   font-family: var(--font-secondary);
-   font-size: var(--text-xxlarge);
-   font-weight: 700;
-   margin: var(--spacing-standard);
-   text-decoration: none;
- }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
    header{
+     align-items: stretch;
      flex-direction: row;
-     justify-content: space-around;
+     justify-content: flex-start;
+     padding: .5rem 0 .5rem .5rem;
    }
 
-   header nav a{
-     color: var(--background-primary);
+   header nav{
+     background-color: white;
+     padding-top: 2rem;
+     width: 100%;
    }
-
+   .my-name{
+     background-color: var(--background-primary);
+     border-radius: 25rem 0 0 25rem;
+     margin: 0;
+     padding-left: var(--spacing-standard);
+     padding-top: 1rem;
+     width: 100%;
+   }
  }
+@media screen and (min-width: 1025px){
+
+   header{
+     align-items: unset;
+     flex-direction: row;
+     justify-content: flex-start;
+     padding: 0 0 .5rem 0;
+   }
+    .my-name{
+      flex: auto;
+      margin: 0;
+    }
+    nav{
+      background-color: var(--background-primary);
+      padding-top: 2.2rem;
+    }
+   main{
+
+   }
+
+   footer{
+ }
+}
+/*========================================================================
+
+  Home
+
+========================================================================*/
+.introduction{
+  align-items: center;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  margin: var(--spacing-standard);
+}
+
+.introduction blockquote{
+  padding-left: calc(var(--spacing-standard)*2) 0 calc(var(--spacing-standard)*2) 0;
+  text-align: center;
+}
+
+.introduction blockquote::before{
+  color: var(--text-color-secondary);
+  content: "❝";
+  padding-right: .5rem;
+}
+
+.introduction blockquote::after{
+  color: var(--text-color-secondary);
+  content: "❞";
+  padding-left: .5rem;
+
+}
+
+.introduction figure{
+  background-image: linear-gradient(to left, rgba(255, 20, 147, 0.80), rgba(255, 215, 0, 0.60)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23888888' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  border-radius: 25rem;
+  diplay: inline-block;
+  padding: var(--spacing-standard);
+}
+
+.introduction img{
+  border-radius: 25rem;
+  width: 15rem;
+}
+
+.bio{
+  padding: calc(var(--spacing-standard)*3);
+}
+
+.bio p{
+  padding: 0 var(--spacing-standard);
+}
+.bio p:nth-child(odd){
+  border-left: 2px solid var(--color-primary);
+}
+.bio p:nth-child(even){
+  border-right: 2px solid var(--color-secondary);
+}
+@media screen and (max-width: 1024px) and (min-width: 768px){
+  .introduction{
+    flex-direction: row;
+  }
+}
+
+@media screen and (min-width: 1025px){
+  .introduction{
+    flex-direction: row;
+  }
+}
+ /*========================================================================
+
+  Navigation
+
+ ========================================================================*/
+ .active{
+   color: var(--text-color-primary);
+ }
+
+ header nav a:hover::before{
+    content: '》';
+  }
+
+ header .active::before{
+   content: '》';
+ }
+
+ nav li{
+   display: inline-block;
+   list-style-type: none;
+ }
+ nav a{
+   color: var(--text-color-primary-light);
+   font-family: var(--font-primary);
+   font-weight: bold;
+   margin: var(--spacing-standard);
+   text-decoration: none;
+   transition: color 0.5s ease;
+ }
+ nav a:hover{
+   color: var(--text-color-secondary);
+   transition: color 0.3s ease;
+}
+/*========================================================================
+
+  Resume
+
+========================================================================*/
+
+
 /*========================================================================
 
   Examples
@@ -171,7 +336,7 @@ header nav a:hover::before{
 }
 .color-dot:first-child circle{
   fill: var(--background-primary);
-  stroke: white;
+  stroke: var(--text-color-primary);
 }
 .color-dot circle{
   fill: var(--color-primary);
@@ -204,7 +369,7 @@ header nav a:hover::before{
 .featured-text-row td:first-child{
 	font-size: var(--text-large);
 	font-family: var(--font-secondary);
-	font-weight: 600;
+	font-weight: 700;
 	font-style: italic;
 }
 
