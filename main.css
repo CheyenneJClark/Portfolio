@@ -33,10 +33,12 @@
 	--text-xsmall: .6rem;
 
 
-	--font-primary: 'Lato', sans-serif;
+	--font-primary: 'Barlow Semi Condensed', sans-serif;
 	--font-secondary: 'Quicksand', sans-serif;
 
-	--spacing-standard: 1rem;
+  --spacing-small: .5rem;
+  --spacing-standard: 1rem;
+  --spacing-large: 2rem;
 }
 /*========================================================================
 
@@ -62,6 +64,7 @@ h1{
 
 h2{
 	font-size: var(--text-xlarge);
+	text-align: center;
 }
 
 h3{
@@ -83,27 +86,23 @@ h6{
 
 .my-name{
    color: var(--text-color-primary);
-   display: block;
    font-family: var(--font-secondary);
-   font-size: 2.5rem;
+   font-size: var(--text-xlarge);
    font-weight: 700;
-   margin: var(--spacing-standard);
    text-decoration: none;
  }
 
 blockquote{
-  font-family: var(--font-secondary);
   font-size: var(--text-xlarge);
 }
 
 p{
 	font-size: var(--text-medium);
-	margin-bottom: var(--spacing-standard);
 }
 
 strong{
 	font-size: var(--text-medium);
-	font-weight: 700;
+	font-weight: 600;
 }
 
 em{
@@ -117,9 +116,23 @@ text{
 	fill: var(--text-color-primary);
 }
 
+.title-group{
+	border-top: 2px solid var(--color-primary);
+	border-bottom: 2px solid var(--color-secondary);
+	text-align: center;
+}
+
 @media screen and (max-width: 1024px) and (min-width: 768px){
   h1{
     text-align: left;
+  }
+
+	h2{
+		text-align: left;
+	}
+
+  .my-name{
+    font-size: var(--text-large);
   }
 }
 
@@ -128,11 +141,14 @@ text{
   text-align: left;
   }
 
+	h2{
+		text-align: left;
+	}
+
   .my-name{
     background-color: white;
-    font-size: 3rem;
-    margin: 0 0 var(--spacing-standard) 0;
-    padding-left: var(--spacing-standard);
+    font-size: var(--text-large);
+
   }
 }
 /*========================================================================
@@ -140,36 +156,40 @@ text{
  Cards
 
 ========================================================================*/
-.card-work{
-  border: 3px solid deeppink;
-  min-width: 20rem;
+.card-portfolio{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	min-width: 10rem;
 }
+
+.card-portfolio img{
+	width: 75%;
+	margin-bottom: var(--spacing-small);
+}
+
+.card-portfolio .title-group{
+	align-self: stretch;
+}
+
+
+
 /*========================================================================
 
 	Header
 
 ========================================================================*/
-/*========================================================================
-
-	Layout
-
-========================================================================*/
-
-body{
-	background-color: var(--background-primary);
-  min-width: 400px;
-}
-
 header{
   align-items: center;
-  background-color: #DFDBE5;
   background-image: linear-gradient(to right, rgba(255, 20, 147, 0.80), rgba(255, 215, 0, 0.60)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23888888' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
-main{
-  padding: var(--spacing-standard);
+.my-name{
+	   display: block;
+     margin: var(--spacing-standard);
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
@@ -182,7 +202,8 @@ main{
 
    header nav{
      background-color: white;
-     padding-top: 2rem;
+     padding: 0 var(--spacing-small) 0 0;
+     text-align: right;
      width: 100%;
    }
    .my-name{
@@ -190,12 +211,11 @@ main{
      border-radius: 25rem 0 0 25rem;
      margin: 0;
      padding-left: var(--spacing-standard);
-     padding-top: 1rem;
      width: 100%;
    }
  }
-@media screen and (min-width: 1025px){
 
+@media screen and (min-width: 1025px){
    header{
      align-items: unset;
      flex-direction: row;
@@ -205,18 +225,29 @@ main{
     .my-name{
       flex: auto;
       margin: 0;
+      padding: 2.2rem 0 0 var(--spacing-standard);
     }
     nav{
       background-color: var(--background-primary);
-      padding-top: 2.2rem;
+      padding: 2.2rem var(--spacing-standard) 0 0;
     }
-   main{
-
-   }
-
-   footer{
- }
 }
+/*========================================================================
+
+	Layout
+
+========================================================================*/
+
+body{
+	background-color: var(--background-primary);
+  min-width: 400px;
+}
+
+
+main{
+  padding: var(--spacing-standard);
+}
+
 /*========================================================================
 
   Home
@@ -231,7 +262,7 @@ main{
 }
 
 .introduction blockquote{
-  padding-left: calc(var(--spacing-standard)*2) 0 calc(var(--spacing-standard)*2) 0;
+  padding: var(-spacing-large) 0 var(--spacing-large) 0;
   text-align: center;
 }
 
@@ -242,7 +273,7 @@ main{
 }
 
 .introduction blockquote::after{
-  color: var(--text-color-secondary);
+  color: var(--text-color-tertiary);
   content: "❞";
   padding-left: .5rem;
 
@@ -251,28 +282,32 @@ main{
 .introduction figure{
   background-image: linear-gradient(to left, rgba(255, 20, 147, 0.80), rgba(255, 215, 0, 0.60)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23888888' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   border-radius: 25rem;
-  diplay: inline-block;
   padding: var(--spacing-standard);
 }
 
 .introduction img{
   border-radius: 25rem;
+  margin: 1rem;
   width: 15rem;
 }
 
 .bio{
   padding: calc(var(--spacing-standard)*3);
+  max-width: 50rem;
 }
 
 .bio p{
   padding: 0 var(--spacing-standard);
 }
+
 .bio p:nth-child(odd){
   border-left: 2px solid var(--color-primary);
 }
+
 .bio p:nth-child(even){
   border-right: 2px solid var(--color-secondary);
 }
+
 @media screen and (max-width: 1024px) and (min-width: 768px){
   .introduction{
     flex-direction: row;
@@ -293,29 +328,71 @@ main{
    color: var(--text-color-primary);
  }
 
- header nav a:hover::before{
+ header nav a::before{
     content: '》';
-  }
+    opacity: 0;
+}
 
  header .active::before{
-   content: '》';
+   opacity: 1;
  }
 
  nav li{
    display: inline-block;
    list-style-type: none;
  }
+
  nav a{
    color: var(--text-color-primary-light);
    font-family: var(--font-primary);
-   font-weight: bold;
-   margin: var(--spacing-standard);
+   font-size: var(--text-large);
+   font-weight: 600;
    text-decoration: none;
    transition: color 0.5s ease;
  }
+
  nav a:hover{
-   color: var(--text-color-secondary);
+   color: var(--background-primary);
    transition: color 0.3s ease;
+}
+
+ nav a:hover::before{
+   opacity: 1;
+}
+@media screen and (max-width: 1024px) and (min-width: 768px){
+  nav a:hover{
+    color:  var(--text-color-secondary);
+    transition: color 0.3s ease;
+  }
+}
+
+@media screen and (min-width: 1025px){
+  nav a{
+    padding-left: 1rem;
+  }
+
+  nav a:hover{
+    color:  var(--text-color-secondary);
+    transition: color 0.3s ease;
+  }
+}
+
+/*========================================================================
+
+  Portfolio
+
+========================================================================*/
+.case-studies{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: var(--spacing-small);
+}
+
+@media screen and (min-width: 1025px){
+	.case-studies{
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: var(--spacing-standard);
+	}
 }
 /*========================================================================
 
@@ -346,6 +423,23 @@ main{
   fill: var(--color-secondary);
   stroke: white;
 }
+
+.typefaces{
+  margin: var(--spacing-standard);
+}
+
+.typefaces td{
+  border-bottom: 2px dashed var(--color-primary);
+  border-collapse: collapse;
+  text-align: center;
+  padding-left: .5rem;
+}
+
+.typefaces td:first-child{
+  text-align: left;
+  padding-left: 0;
+}
+
 .page-title-row td:first-child{
 	font-size: var(--text-xxlarge);
 	font-family: var(--font-secondary);
