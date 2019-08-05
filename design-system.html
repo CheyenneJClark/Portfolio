@@ -87,8 +87,21 @@
     <h2>Form Inputs</h2>
     <figure>
       <form class="form-example" action="#" method="#">
-        <label for="input-text-default"></label>
-        <input type="text" id="input-text-default" name="" value="">
+
+        <label for="input-text-default">Default State</label>
+        <input type="text" id="input-text-default" name="" value="" required>
+
+        <label for="input-text-default">Focus State</label>
+        <input type="text" id="input-text-default" name="" value="" placeholder="Focused" class="input-text-default input-focus input-error" required>
+
+        <label for="input-text-default">Error State</label>
+        <input type="text" id="input-text-default" name="" value="" placeholder="Error, Will Robinson" class="input-text-default input-error">
+
+        <label for="">Message</label>
+        <textarea name="name" rows="8" cols="80"></textarea>
+
+        <input type="submit" name="submit" value="submit">
+
       </form>
     </figure>
     <h2>Portfolio Cards</h2>
