@@ -17,6 +17,8 @@
 :root{
 	--background-primary: #fff;
 
+	--border-standard: 1px dashed var(--text-color-primary-light);
+
 	--color-primary: rgb(255, 20, 147);
 	--color-secondary: rgb(255, 215, 0);
 	--color-tertiary: rgb(255,127,80);
@@ -39,6 +41,7 @@
   --spacing-small: .5rem;
   --spacing-standard: 1rem;
   --spacing-large: 2rem;
+
 }
 /*========================================================================
 
@@ -123,8 +126,8 @@ text{
 }
 
 .title-group{
-	border-top: 1px dashed #888;
-	border-bottom: 1px dashed #888;
+	border-top: var(--border-standard);
+	border-bottom: var(--border-standard);
 	text-align: center;
 }
 
@@ -223,11 +226,32 @@ body{
 
 main{
   padding: var(--spacing-standard);
+	min-height: 90vh;
 }
 
 figure:not(:last-child){
 	margin-bottom: var(--spacing-standard);
 }
+
+
+/*========================================================================
+
+	Footer
+
+========================================================================*/
+	footer{
+		display: flex;
+		justify-content: center;
+		border-top: var(--border-standard);
+	}
+
+	footer a{
+		color: var(--text-color-primary);
+		font-family: var(--font-secondary);
+	}
+	footer a:hover{
+		color: var(--color-primary);
+	}
 
 /*========================================================================
 
@@ -238,7 +262,7 @@ figure:not(:last-child){
   align-items: center;
   display: flex;
   flex-direction: column-reverse;
-  justify-content: flex-end;
+  justify-content: space-around;
   margin: var(--spacing-standard);
 }
 
@@ -289,15 +313,66 @@ figure:not(:last-child){
   border-right: 2px solid var(--color-secondary);
 }
 
+.call-to-action{
+	align-items: center;
+	border-bottom: var(--border-standard);
+	display: flex;
+	flex-direction: column;
+	padding: var(--spacing-standard);
+}
+
+
+.call-to-action a{
+	border: 2px solid var(--text-color-primary);
+	border-radius: 3rem;
+	color: var(--text-color-primary);
+	display: inline-block;
+	font-family: var(--font-secondary);
+	font-size: var(--text-large);
+	padding: var(--spacing-standard) calc(var(--spacing-standard) * 5);
+	text-decoration: none;
+	animation: hues 5s infinite linear;
+}
+
+.call-to-action a:hover{
+	box-shadow: 0 0 0 .2rem var(--text-color-primary);
+	transition: box-shadow .3s ease-in;
+}
+
 @media screen and (max-width: 1024px) and (min-width: 768px){
   .introduction{
     flex-direction: row;
   }
+	.call-to-action{
+		border-top: var(--border-standard);
+	}
 }
 
 @media screen and (min-width: 1025px){
   .introduction{
     flex-direction: row;
+  }
+
+	.call-to-action{
+		border-top: var(--border-standard);
+	}
+}
+
+@keyframes hues {
+  0% {
+    background-color: var(--color-primary);
+  }
+  25% {
+    background-color: var(--color-tertiary);
+  }
+  50% {
+    background-color: var(--color-secondary);
+  }
+  75% {
+    background-color: var(--color-tertiary);
+  }
+  100% {
+    background-color: var(--color-tertiary);
   }
 }
 /*========================================================================
@@ -336,7 +411,7 @@ figure:not(:last-child){
 }
 
 .resume-details div section, .experience ul{
-		border-bottom: 1px dashed var(--text-color-primary-light);
+		border-bottom: var(--border-standard);
 		padding: var(--spacing-standard);
 }
 
@@ -361,6 +436,12 @@ li{
 		padding: var(--spacing-standard);
 		text-align: center;
 	}
+	.resume-details div h2{
+		text-align: center;
+	}
+	.resume-details > div li{
+		font-size: 1.1rem;
+	}
 }
 
 @media screen and (min-width: 1025px){
@@ -379,6 +460,10 @@ li{
 	.resume-details div section{
 		border-bottom: none;
 		padding: var(--spacing-standard);
+	}
+
+	.resume-details > div li{
+		font-size: 1.1rem;
 	}
 }
 
@@ -467,6 +552,19 @@ nav a:hover::before{
   flex-direction: column;
   justify-content: center;
 	min-width: 10rem;
+}
+
+.card-portfolio a{
+	color: var(--text-color-primary);
+	text-decoration: none;
+}
+
+.card-portfolio:nth-child(odd) a:hover{
+	color: var(--color-primary);
+}
+
+.card-portfolio:nth-child(even) a:hover{
+	color: var(--color-secondary);
 }
 
 .card-portfolio img{
@@ -632,10 +730,10 @@ textarea:focus{
 }
 
 input[type=submit]{
-	background-image: linear-gradient(to right, rgba(255, 20, 147, 0.80), rgba(255, 215, 0, 0.60)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23888888' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 	border: none;
 	border-radius: 1rem;
 	font-size:  var(--text-large);
+	animation: hues 5s infinite linear;
 }
 
 input[type=submit]:hover{
