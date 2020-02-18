@@ -155,6 +155,10 @@ text{
   }
 }
 
+li{
+	list-style: none;
+}
+
 /*========================================================================
 
 	Header
@@ -232,7 +236,34 @@ main{
 figure:not(:last-child){
 	margin-bottom: var(--spacing-standard);
 }
+@media print {
+		header{
+			display: none;
+		}
+		footer{
+			display: none;
+		}
+		.resume-details{
+			display: grid;
+			grid-template-columns: 2fr 1fr;
+			grid-gap: var(--spacing-standard);
+			text-align: left;
+		}
 
+		.resume-details div{
+			border: 2px solid var(--text-color-primary);
+			border-radius: 3rem;
+		}
+
+		.resume-details div section{
+			border-bottom: none;
+			padding: var(--spacing-standard);
+		}
+
+		.resume-details > div li{
+			font-size: 1.1rem;
+		}
+  }
 
 /*========================================================================
 
@@ -372,7 +403,7 @@ figure:not(:last-child){
     background-color: var(--color-tertiary);
   }
   100% {
-    background-color: var(--color-tertiary);
+    background-color: var(--color-primary);
   }
 }
 /*========================================================================
@@ -382,15 +413,29 @@ figure:not(:last-child){
 ========================================================================*/
 .case-studies{
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr;
+	justify-items: center;
 	grid-gap: var(--spacing-small);
 }
 
-@media screen and (max-width: 1024px) and (min-width: 768px){
+@media screen and (max-width: 1024px) and (min-width: 975px){
 	.case-studies{
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-gap: var(--spacing-standard);
 	}
+}
+
+@media screen and (max-width: 974px) and (min-width: 675px){
+	.case-studies{
+		grid-template-columns: 1fr 1fr;
+		grid-gap: var(--spacing-standard);
+	}
+
+	.card-portfolio:nth-child(odd):last-child{
+				grid-column-start: 1;
+				grid-column-end: 3;
+		}
+
 }
 
 @media screen and (min-width: 1025px){
@@ -415,9 +460,6 @@ figure:not(:last-child){
 		padding: var(--spacing-standard);
 }
 
-li{
-	list-style: none;
-}
 @media screen and (max-width: 1024px) and (min-width: 768px){
 	.resume-details{
 		display: grid;
@@ -547,10 +589,7 @@ nav a:hover::before{
 
 ========================================================================*/
 .card-portfolio{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+
 	min-width: 10rem;
 }
 
@@ -567,11 +606,13 @@ nav a:hover::before{
 	color: var(--color-secondary);
 }
 
-.card-portfolio img{
-	border-radius: 1rem;
-
+.card-portfolio a{
 	margin-bottom: var(--spacing-small);
 	width: 75%;
+}
+
+.card-portfolio img{
+	border-radius: 1rem;
 }
 
 .card-portfolio:nth-child(odd) img{
@@ -587,6 +628,10 @@ nav a:hover::before{
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
+	.card-portfolio{
+		min-width: 10rem;
+	}
+
 	.card-portfolio:nth-child(3n + 1) img{
 		box-shadow: -.1rem -.1rem 0 var(--color-primary);
 	}
@@ -660,10 +705,6 @@ nav a:hover::before{
 		flex-direction: row-reverse;
 	}
 
-	.case-study img{
-		border-radius: 3rem;
-		width: 30rem;
-	}
 }
 
 @media screen and (min-width: 1025px){
