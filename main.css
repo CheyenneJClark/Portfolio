@@ -152,6 +152,10 @@ text{
   .my-name{
     background-color: white;
   }
+
+	p{
+		font-size: var(--text-large);
+	}
 }
 
 li{
@@ -329,6 +333,7 @@ figure:not(:last-child){
   border-radius: 25rem;
   margin: 1rem;
   width: 15rem;
+	display: block;
 }
 
 .bio{
@@ -344,11 +349,11 @@ figure:not(:last-child){
 	max-width: 50rem;
 }
 
-.bio p:nth-child(odd){
+.bio p:nth-child(even){
   border-left: 2px solid var(--color-primary);
 }
 
-.bio p:nth-child(even){
+.bio p:nth-child(odd){
   border-right: 2px solid var(--color-secondary);
 }
 
