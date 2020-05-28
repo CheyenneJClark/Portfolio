@@ -304,6 +304,12 @@ figure:not(:last-child){
   flex-direction: column;
 	border-top: none;
 }
+.introduction div{
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: center;
+}
+
 
 .introduction blockquote{
   padding: var(-spacing-large) 0 var(--spacing-large) 0;
@@ -410,7 +416,7 @@ figure:not(:last-child){
   }
 }
 
-@media screen and (max-width: 974px) and (min-width: 675px){
+@media screen and (max-width: 1024px) and (min-width: 975px){
 	.introduction > div{
 		display: flex;
 		align-items: center;
