@@ -383,7 +383,6 @@ figure:not(:last-child){
 	transition: box-shadow .3s ease-in;
 }
 
-
 .call-to-action{
 	border-top: var(--border-standard);
 }
@@ -410,6 +409,31 @@ figure:not(:last-child){
     background-color: var(--color-primary);
   }
 }
+
+@media screen and (max-width: 974px) and (min-width: 675px){
+	.introduction > div{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row-reverse;
+	}
+	.introduction blockquote{
+		width: 50%;
+	}
+}
+
+@media screen and (min-width: 1025px){
+	.introduction > div{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-direction: row-reverse;
+	}
+	.introduction blockquote{
+		width: 50%;
+	}
+}
+
 /*========================================================================
 
   Portfolio
