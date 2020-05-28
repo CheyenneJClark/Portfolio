@@ -644,12 +644,9 @@ nav a:hover::before{
 	text-decoration: none;
 }
 
-.card-portfolio:nth-child(odd) a:hover{
-	color: var(--color-primary);
-}
-
-.card-portfolio:nth-child(even) a:hover{
-	color: var(--color-secondary);
+.card-portfolio a:hover .title-group{
+	background: var(--color-primary);
+  background: linear-gradient(115deg, var(--color-primary) 0%, var(--color-tertiary) 51%, var(--color-secondary) 100%);
 }
 
 .card-portfolio a{
@@ -658,7 +655,7 @@ nav a:hover::before{
 }
 
 .card-portfolio img{
-	border-radius: 25px;
+	border-radius: 25px 25px 0 0;
 	width: 10rem;
 }
 
@@ -672,6 +669,9 @@ nav a:hover::before{
 */
 .card-portfolio .title-group{
 	align-self: stretch;
+	border: 1px dashed black;
+	border-radius: 5px;
+	padding: var(--spacing-small);
 }
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
