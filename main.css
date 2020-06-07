@@ -16,7 +16,7 @@
 ========================================================================*/
 :root{
 	--background-primary: #fff;
-	--background-gradient: linear-gradient(115deg, var(--color-primary) 0%, var(--color-tertiary) 51%, var(--color-secondary) 100%);
+	--background-gradient: linear-gradient(115deg, var(--color-secondary) 0%, var(--color-tertiary) 51%, var(--color-primary) 100%);
 
 	--border-standard: 1px dashed var(--text-color-primary-light);
 
@@ -98,7 +98,6 @@ h6{
 
 blockquote{
   font-size: var(--text-xlarge);
-	width: 75%
 }
 
 figcaption{
@@ -140,7 +139,9 @@ text{
 		text-align: left;
 	}
 }
-
+a{
+	text-decoration: none;
+}
 @media screen and (min-width: 1025px){
   h1{
   text-align: center;
@@ -300,14 +301,8 @@ figure:not(:last-child){
 }
 
 .introduction{
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-	border-top: none;
-}
-.introduction div{
 	display: flex;
-	flex-direction: column-reverse;
+	flex-direction: row;
 	align-items: center;
 }
 
@@ -330,21 +325,42 @@ figure:not(:last-child){
 
 }
 
+.introduction > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
 .introduction figure{
   background-image: linear-gradient(to left, rgba(255, 20, 147, 0.80), rgba(255, 215, 0, 0.60)), url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='49' viewBox='0 0 28 49'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='hexagons' fill='%23888888' fill-opacity='0.4' fill-rule='nonzero'%3E%3Cpath d='M13.99 9.25l13 7.5v15l-13 7.5L1 31.75v-15l12.99-7.5zM3 17.9v12.7l10.99 6.34 11-6.35V17.9l-11-6.34L3 17.9zM0 15l12.98-7.5V0h-2v6.35L0 12.69v2.3zm0 18.5L12.98 41v8h-2v-6.85L0 35.81v-2.3zM15 0v7.5L27.99 15H28v-2.31h-.01L17 6.35V0h-2zm0 49v-8l12.99-7.5H28v2.31h-.01L17 42.15V49h-2z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   border-radius: 25rem;
   padding: var(--spacing-standard);
+	display: inline-block;
 }
 
 .introduction img{
   border-radius: 25rem;
+	border: 1px dashed black;
   margin: 1rem;
   width: 15rem;
 	display: block;
 }
+.blurb{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 50%;
+}
+.blurb a{
+	background: var(--background-gradient);
+	border: 2px solid black;
+	border-radius: 30px;
+	color: black;
+	font-size: var(--text-medium);
+	padding: 1rem;
+}
 
 .bio{
-
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -357,87 +373,27 @@ figure:not(:last-child){
 }
 
 .bio p:nth-child(even){
-  border-left: 2px solid var(--color-primary);
-}
-
-.bio p:nth-child(odd){
   border-right: 2px solid var(--color-secondary);
 }
 
-.call-to-action{
-	align-items: center;
-	border-bottom: var(--border-standard);
-	display: flex;
-	flex-direction: column;
-	padding: var(--spacing-standard);
-}
+.bio p:nth-child(odd){
+	border-left: 2px solid var(--color-primary);
 
-
-.call-to-action a{
-	border: 2px solid var(--text-color-primary);
-	border-radius: 3rem;
-	color: var(--text-color-primary);
-	display: inline-block;
-	font-family: var(--font-secondary);
-	font-size: var(--text-large);
-	padding: var(--spacing-standard) calc(var(--spacing-standard) * 5);
-	text-decoration: none;
-	animation: hues 5s infinite linear;
-}
-
-.call-to-action a:hover{
-	box-shadow: 0 0 0 .2rem var(--text-color-primary);
-	transition: box-shadow .3s ease-in;
-}
-
-.call-to-action{
-	border-top: var(--border-standard);
-}
-
-.call-to-action{
-	border-top: var(--border-standard);
-}
-
-
-@keyframes hues {
-  0% {
-    background-color: var(--color-primary);
-  }
-  25% {
-    background-color: var(--color-tertiary);
-  }
-  50% {
-    background-color: var(--color-secondary);
-  }
-  75% {
-    background-color: var(--color-tertiary);
-  }
-  100% {
-    background-color: var(--color-primary);
-  }
 }
 
 @media screen and (max-width: 1024px) and (min-width: 975px){
-	.introduction > div{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: row-reverse;
-	}
-	.introduction blockquote{
-		width: 50%;
+	.introduction a{
+			font-size: var(--text-medium);
 	}
 }
 
 @media screen and (min-width: 1025px){
-	.introduction > div{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		flex-direction: row-reverse;
 	}
 	.introduction blockquote{
-		width: 50%;
+		padding: 0 2rem 0 2rem;
+	}
+	.introduction a{
+		font-size: var(--text-medium);
 	}
 }
 
@@ -468,7 +424,9 @@ figure:not(:last-child){
 
 @media screen and (min-width: 1025px){
 	.case-studies{
+		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: var(--spacing-standard);
 	}
 }
 /*========================================================================
@@ -616,19 +574,11 @@ nav a:hover::before{
 
 ========================================================================*/
 .card-portfolio{
-	min-width: 10rem;
 	display: flex;
 	flex-direction: row;
 	border: 1px dashed black;
 	border-radius: 25px;
-}
-
-.card-portfolio:nth-child(odd){
-	/*border: .2rem solid var(--color-primary);*/
-}
-
-.card-portfolio:nth-child(even){
-	/*border: .2rem solid var(--color-secondary);*/
+	max-width: 30rem;
 }
 
 .card-portfolio p{
@@ -641,14 +591,6 @@ nav a:hover::before{
 	border-radius: 25px 0 0 25px;
 }
 
-/*.card-portfolio:nth-child(odd) img{
-	box-shadow: -.1rem -.1rem 0 var(--color-primary);
-}
-
-.card-portfolio:nth-child(even) img{
-	box-shadow: -.1rem -.1rem 0 var(--color-secondary);
-}
-*/
 .card-portfolio .title-group{
 	display: flex;
 	flex-direction: column;
@@ -657,38 +599,55 @@ nav a:hover::before{
 	text-decoration: none;
 	padding: var(--spacing-small);
 }
+.card-portfolio a {
+	padding: .5rem 1rem .5rem 1rem;
+	border-radius: 30px;
+	font-size: var(--text-medium);
+	font-weight: 600;
+	border: 2px solid black;
+}
+
+.card-portfolio a {
+	background-color: black;
+	color: white;
+}
+
+.card-portfolio a:hover{
+	background: var(--background-gradient);
+	color: black;
+	transition: all .2s ease-in;
+}
 
 @media screen and (max-width: 1024px) and (min-width: 768px){
-	.card-portfolio{
-		min-width: 10rem;
+	/*.card-portfolio{
 	}
 
-	/*.card-portfolio:nth-child(3n + 1) img{
+	.card-portfolio:nth-child(3n + 1){
 		box-shadow: -.1rem -.1rem 0 var(--color-primary);
 	}
 
-	.card-portfolio:nth-child(3n + 2) img{
+	.card-portfolio:nth-child(3n + 2){
 		box-shadow: -.1rem -.1rem 0 var(--color-tertiary);
 	}
 
-	.card-portfolio:nth-child(3n + 3) img{
+	.card-portfolio:nth-child(3n + 3){
 		box-shadow: -.1rem -.1rem 0 var(--color-secondary);
-	}
-	*/
+	}*/
+
 }
 
 @media screen and (min-width: 1025px){
-/*	.card-portfolio:nth-child(3n + 1) img{
-		box-shadow: -.2rem -.2rem 0 var(--color-secondary);
+	/*.card-portfolio:nth-child(3n + 1){
+		box-shadow: .2rem .2rem 0 var(--color-primary);
 	}
 
-	.card-portfolio:nth-child(3n +2) img{
-		box-shadow: -.2rem -.2rem 0 var(--color-tertiary);
+	.card-portfolio:nth-child(3n +2){
+		box-shadow: .2rem .2rem 0 var(--color-tertiary);
 	}
 
-	.card-portfolio:nth-child(3n + 3) img{
-		box-shadow: -.2rem -.2rem 0 var(--color-primary);
-	}*/
+	.card-portfolio:nth-child(3n + 3){
+		box-shadow: .2rem .2rem 0 var(--color-secondary);
+	*/
 }
 
 /*========================================================================
@@ -824,6 +783,64 @@ input[type=submit]:hover{
 	input, textarea{
 		width: 30rem;
 	}
+}
+/*========================================================================
+
+  Dead but not forgotten
+
+========================================================================*/
+
+.call-to-action{
+	align-items: center;
+	border-bottom: var(--border-standard);
+	display: flex;
+	flex-direction: column;
+	padding: var(--spacing-standard);
+}
+
+
+.call-to-action a{
+	border: 2px solid var(--text-color-primary);
+	border-radius: 3rem;
+	color: var(--text-color-primary);
+	display: inline-block;
+	font-family: var(--font-secondary);
+	font-size: var(--text-large);
+	padding: var(--spacing-standard) calc(var(--spacing-standard) * 5);
+	text-decoration: none;
+	animation: hues 5s infinite linear;
+}
+
+.call-to-action a:hover{
+	box-shadow: 0 0 0 .2rem var(--text-color-primary);
+	transition: box-shadow .3s ease-in;
+}
+
+.call-to-action{
+	border-top: var(--border-standard);
+}
+
+.call-to-action{
+	border-top: var(--border-standard);
+}
+
+
+@keyframes hues {
+  0% {
+    background-color: var(--color-primary);
+  }
+  25% {
+    background-color: var(--color-tertiary);
+  }
+  50% {
+    background-color: var(--color-secondary);
+  }
+  75% {
+    background-color: var(--color-tertiary);
+  }
+  100% {
+    background-color: var(--color-primary);
+  }
 }
 
 /*========================================================================
