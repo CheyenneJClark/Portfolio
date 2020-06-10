@@ -434,7 +434,6 @@ figure:not(:last-child){
 .case-studies{
 	display: grid;
 	grid-template-columns: 1fr;
-	grid-gap: var(--spacing-small);
 	padding: var(--spacing-standard) 0 var(--spacing-standard) 0;
 }
 
