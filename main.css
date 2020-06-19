@@ -163,7 +163,23 @@ a{
 li{
 	list-style: none;
 }
+.pdf-link{
+	padding: .5rem 1rem .5rem 1rem;
+	border-radius: 30px;
+	font-size: var(--text-medium);
+	font-weight: 600;
+	border: 2px solid var(--text-color-primary);
+}
 
+.pdf-link{
+	background-color: white;
+	color: var(--text-color-primary);
+}
+
+.pdf-link:hover{
+	background: var(--background-gradient);
+	transition: all .2s ease-in;
+}
 /*========================================================================
 
 	Header
@@ -221,6 +237,7 @@ header{
       background-color: var(--background-primary);
       padding: 2.2rem var(--spacing-standard) 0 0;
     }
+
 }
 /*========================================================================
 
@@ -229,7 +246,6 @@ header{
 ========================================================================*/
 body{
 	background-color: var(--background-primary);
-  min-width: 400px;
 }
 
 
@@ -346,6 +362,8 @@ figure:not(:last-child){
 	padding: 1rem;
 }
 
+
+
 .bio{
 	display: flex;
 	flex-direction: column;
@@ -391,8 +409,17 @@ figure:not(:last-child){
 	}
 	.blurb a{
 		font-size: var(--text-large);
+
 	}
 
+	.blurb a::before{
+	 		content: '》';
+			opacity: 1;
+	 }
+
+	 .blurb a:hover::before{
+		 opacity: 1;
+	 }
 }
 
 @media screen and (min-width: 1025px){
@@ -424,6 +451,15 @@ figure:not(:last-child){
 	.blurb a{
 		font-size: var(--text-large);
 	}
+
+	.blurb a::before{
+	 		content: '》';
+			opacity: 0;
+	 }
+
+	 .blurb a:hover::before{
+		 opacity: 1;
+	 }
 }
 
 /*========================================================================
@@ -667,13 +703,12 @@ nav a:hover::before{
 	}
 
 	.card-portfolio a {
-		background-color: black;
-		color: white;
+		background-color: white;
+		color: var(--text-color-primary);
 	}
 
 	.card-portfolio a:hover{
 		background: var(--background-gradient);
-		color: black;
 		transition: all .2s ease-in;
 	}
 }
@@ -710,17 +745,16 @@ nav a:hover::before{
 		border-radius: 30px;
 		font-size: var(--text-medium);
 		font-weight: 600;
-		border: 2px solid black;
+		border: 2px solid var(--text-color-primary);
 	}
 
 	.card-portfolio a {
-		background-color: black;
-		color: white;
+		background-color: white;
+		color: var(--text-color-primary);
 	}
 
 	.card-portfolio a:hover{
 		background: var(--background-gradient);
-		color: black;
 		transition: all .2s ease-in;
 	}
 }
@@ -864,7 +898,22 @@ input[type=submit]:hover{
   Dead but not forgotten
 
 ========================================================================*/
+.pdf-link{
+	padding: .5rem 1rem .5rem 1rem;
+	border-radius: 30px;
+	font-size: var(--text-medium);
+	font-weight: 600;
+	border: 2px solid var(--text-color-primary);
+}
 
+.pdf-link{
+	background-color: white;
+	color: var(--text-color-primary);
+}
+
+.pdf-link:hover{
+	background: var(--background-gradient);
+	transition: all .2s ease-in;
 .call-to-action{
 	align-items: center;
 	border-bottom: var(--border-standard);
