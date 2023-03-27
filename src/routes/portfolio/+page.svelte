@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Cheyenne J. Clark's Portfolio</title>
+
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,600|Quicksand:300,500,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <a href="/" class="my-name">Cheyenne J. Clark</a>
+    <nav>
+      <ul>
+        <li><a href="/">Myself</a></li>
+        <li><a href="/portfolio" class="active">My Work</a></li>
+        <li><a href="clark-resume-1-21-21.pdf" target="_blank">My Résumé</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1>My Portfolio</h1>
+    <h2>Case Studies</h2>
+    <section class="case-studies">
+      <div  class="card-portfolio">
+        <img src="ACCRR-logo.png" alt="Austin Community College Riverbat Reach Project">
+        <div class="title-group">
+          <h3>Austin Community College Riverbat Reach</h3>
+          <p>My team and I helped ACC understand the needs of student for volunteership and we designed a UI to help students find opportunities that met their needs. </p>
+          <a href="Riverbat Reach Project.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+      <div  class="card-portfolio">
+        <img src="respace login.png" alt="respace login view">
+        <div class="title-group">
+          <h3>Reclaiming Space</h3>
+          <p>The story of how I prototyped an app to help folks dispose of clutter!</p>
+          <a href="ReSpace-The-Case-Study.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+      <div  class="card-portfolio">
+        <img src="learnable-cover.jpg" alt="learnable project icon">
+        <div class="title-group">
+          <h3>LearnAble</h3>
+          <p>A game designed to help teach learning techiques and encourage collaboration.</p>
+          <a href="learnable.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+      <div  class="card-portfolio">
+        <img src="shieldu-graphic.png" alt="ShieldU graphic">
+        <div class="title-group">
+          <h3>ShieldU Product Design</h3>
+          <p>An app designed to help calculate reapplication times based on environment.</p>
+          <a href="ShieldU-2.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+      <div  class="card-portfolio">
+        <img src="311-redesign-logo.png" alt="Austin 311 Redesign">
+        <div class="title-group">
+          <h3>Austin 311 Redesign Exercicse</h3>
+          <p>Redesign exercise adding features to the Austin 311 site and streamlining the visual design.</p>
+          <a href="Austin 311 Redesign-3.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+      <div  class="card-portfolio">
+        <img src="taco-trek-small.png" alt="taco trek project illustration">
+        <div class="title-group">
+          <h3>Taco Trek</h3>
+          <p>A persuasive design aimed at motivating people to get out and walk.</p>
+          <a href="taco-trek.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+  <footer>
+    <p>Designed by <a href="/contact">Cheyenne J. Clark</a>  &copy 2019</p>
+  </footer>
+</body>
+</html>

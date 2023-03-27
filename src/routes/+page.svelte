@@ -1,2 +1,103 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>Cheyenne J. Clark's Portfolio</title>
+
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,600|Quicksand:300,500,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <a href="/" class="my-name">Cheyenne J. Clark</a>
+
+    <nav>
+      <ul>
+        <li><a href="/" class="active">Myself</a></li>
+        <li><a href="/portfolio">My Work</a></li>
+        <li><a href="clark-resume-not-scrapable-6-11.pdf" target="_blank">My Résumé</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>My name is Cheyenne...</h1>
+
+    <h2>...but I also go by "Pinky".</h2>
+    <section class="introduction">
+      <div>
+        <figure>
+        <img src="cheyenne-clark.png" alt="Cheyenne the Unicorn">
+        </figure>
+        <div class="blurb">
+          <blockquote>I have been a tester, a product manager, a designer, and a developer. Focusing on UX is the culmination of all my experience.</blockquote>
+          <a href="clark-resume-not-scrapable-6-11.pdf">Check out my Experience</a>
+        </div>
+      </div>
+    </section>
+
+    <h2>These are some of my projects.</h2>
+    <section class="case-studies">
+
+      <div  class="card-portfolio">
+        <img src="ACCRR-logo.png" alt="Austin Community College Riverbat Reach Project">
+        <div class="title-group">
+          <h3>Austin Community College Riverbat Reach</h3>
+          <p>My team and I helped ACC understand the needs of students for volunteership and we designed a UI to help students find opportunities that met their needs. </p>
+          <a href="Riverbat Reach Project.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+      <div class="card-portfolio">
+        <img src="respace login.png" alt="respace login view">
+        <div class="title-group">
+          <h3>Reclaiming Space</h3>
+          <p>The story of how I prototyped an app to help folks dispose of clutter!</p>
+          <a href="ReSpace-The-Case-Study.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+      <div  class="card-portfolio">
+        <img src="learnable-cover.jpg" alt="learnable project icon">
+        <div class="title-group">
+          <h3>LearnAble</h3>
+          <p>A game designed to help teach learning techiques and encourage collaboration.</p>
+          <a href="learnable.pdf" target="_blank">View PDF</a>
+        </div>
+      </div>
+
+    </section>
+
+    <h2>This is my story!</h2>
+    <section class="bio">
+      <p>
+        I have been a tester, a product manager, a designer, and a developer. I feel that focusing on user experience is the culminantion of all the roles that I have performed throughout the years.
+      </p>
+
+      <p>
+        After graduating with a four year degree in Game Development, I tested digital battle systems in the hands of soldiers and was a PM for simulation system that tested army systems.
+      </p>
+
+      <p>
+         I wanted to be more technical and creative, so I left to pursue freelance web design. I worked as a UI developer, where I designed and developed dashboards used by teachers to track student progress and identify students in need of help.
+      </p>
+
+      <p>
+        I was starting to focus on UX before I took some time off to take care of my family. Specifically, I was supporting my autistic son as he underwent in home therapy 30-35 hours a week. During that time I worked with his therapists to help him be more empathic, to self-organize, and interact with his peers in a way that reinforced relationships.
+      </p>
+
+      <p>
+        I am currently enrolled in a UX/UI program because as I look into reentering the workforce I want to be able to focus on creating awesome user interfaces and solving user problems.
+      </p>
+    </section>
+
+  </main>
+  <footer>
+    <p>Designed by <a href="/contact">Cheyenne J. Clark</a>  &copy 2020</p>
+  </footer>
+</body>
+</html>

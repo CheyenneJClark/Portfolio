@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Cheyenne J. Clark Portfolio</title>
+
+  <link rel="stylesheet" href="/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:400,400i,600|Quicksand:300,500,700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <h1>Portfolio Design System</h1>
+  </header>
+  <main>
+    <h2>Colors</h2>
+    <figure  class="color-palette">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="color-dot">
+        <title>Background</title>
+        <circle cx="100" cy="100" r="99"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="color-dot">
+        <title>Primary Accent</title>
+        <circle cx="100" cy="100" r="99"/>
+      </svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="color-dot">
+        <title>Secondary Accent</title>
+        <circle cx="100" cy="100" r="99"/>
+      </svg>
+    </figure>
+    <h2>Typefaces</h2>
+    <figure class="typefaces">
+      <table>
+          <thead>
+              <tr>
+                  <th>Content Type</th>
+                  <th>Size</th>
+                  <th>Typeface</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="page-title-row">
+                  <td>Page Title</td>
+                  <td>2.2rem</td>
+                  <td>Quicksand</td>
+              </tr>
+              <tr class="section-title-row">
+                  <td>Section Title</td>
+                  <td>1.8rem</td>
+                  <td>Quicksand</td>
+              </tr>
+              <tr class="subsection-title-row">
+                  <td>Subsection Title</td>
+                  <td>1.4rem</td>
+                  <td>Quicksand</td>
+              </tr>
+              <tr class="inner-subsection-row">
+                  <td>Inner Subsection Title</td>
+                  <td>1rem</td>
+                  <td>Quicksand</td>
+              </tr>
+              <tr class="body-row">
+                  <td>Body Text</td>
+                  <td>1rem</td>
+                  <td>Barlow Semi Condensed</td>
+              </tr>
+              <tr class="featured-text-row">
+                  <td>Featured Text</td>
+                  <td>1rem</td>
+                  <td>Barlow Semi Condensed</td>
+              </tr>
+              <tr class="heavy-text-row">
+                  <td>Heavy Text</td>
+                  <td>1rem</td>
+                  <td>Barlow Semi Condensed</td>
+              </tr>
+              <tr class="emphasized-text-row">
+                  <td>Emphasized Text</td>
+                  <td>1rem</td>
+                  <td>Barlow Semi Condensed</td>
+              </tr>
+          </tbody>
+      </table>
+    </figure>
+    <h2>Form Inputs</h2>
+    <figure>
+      <form class="form-example" action="#" method="#">
+
+        <label for="input-text-default">Default State</label>
+        <input type="text" id="input-text-default" name="" value="" required>
+
+        <label for="input-text-default">Focus State</label>
+        <input type="text" id="input-text-default" name="" value="" placeholder="Focused" class="input-text-default input-focus input-error" required>
+
+        <label for="input-text-default">Error State</label>
+        <input type="text" id="input-text-default" name="" value="" placeholder="Error, Will Robinson" class="input-text-default input-error">
+
+        <label for="">Message</label>
+        <textarea name="name" rows="8" cols="80"></textarea>
+
+        <input type="submit" name="submit" value="submit">
+
+      </form>
+    </figure>
+    <h2>Portfolio Cards</h2>
+    <figure>
+      <div  class="card-portfolio">
+
+        <img src="http://placekitten.com/300/200" alt="place holder kitten">
+        <div class="title-group">
+          <h3>Catastrophic Colors</h3>
+          <p>A brief but titillating description!</p>
+        </div>
+      </div>
+    </figure>
+  </main>
+  <footer>
+
+  </footer>
+</body>
+</html>
